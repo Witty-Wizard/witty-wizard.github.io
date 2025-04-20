@@ -19,13 +19,13 @@ export default function Home() {
       <Paragraph className="max-w-xl mt-4">
         I have <Highlight>{experience} years of experience</Highlight> working on power electronics, embedded systems.
       </Paragraph>
-      <Heading
+      {/* <Heading
         as="h2"
         className="font-black text-lg md:text-lg lg:text-lg mt-20 mb-4"
       >
         What I&apos;ve been working on
       </Heading>
-      <Products />
+      <Products /> */}
     </Container>
   );
 }

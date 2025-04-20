@@ -13,7 +13,7 @@ export const navlinks = [
     icon: IconBolt,
   },
   {
-    href: "/projects",
+    href: "https://docs.wittywizard.in",
     label: "Projects",
     icon: IconBriefcase2,
   },
