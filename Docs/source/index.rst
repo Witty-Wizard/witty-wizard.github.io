@@ -10,6 +10,3 @@ This is the homepage of all the projects I have made and their documentation.
 
 - `SerialIO <https://docs.wittywizard.in/projects/serialio/en/latest/>`_
 - `DriveMaster <https://docs.wittywizard.in/projects/drivemaster/en/latest/>`_
-- `NIDAR <https://docs.wittywizard.in/projects/nidar/en/latest/>`_
-
-
