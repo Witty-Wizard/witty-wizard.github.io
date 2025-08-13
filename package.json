@@ -13,11 +13,14 @@
     "url": "git+https://github.com/Witty-Wizard/witty-wizard.github.io.git"
   },
   "author": "Witty-Wizard",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "bugs": {
     "url": "https://github.com/Witty-Wizard/witty-wizard.github.io/issues"
   },
-  "homepage": "https://github.com/Witty-Wizard/witty-wizard.github.io#readme",
+  "engines": {
+    "node": "22.18.0"
+  },
+  "homepage": "https://www.wittywizard.in",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "@vueuse/core": "^13.6.0",
