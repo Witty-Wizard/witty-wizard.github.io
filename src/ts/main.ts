@@ -1,9 +1,5 @@
-import { createApp } from 'vue';
-import '@/style.css';
-import Navbar from "@/components/Navbar.vue"
+import { createApp } from 'vue'
+import '@/global.css'
+import ParticleField from '@/components/ParticleField.vue'
 
-const app = createApp({})
-
-app.component('my-component', Navbar)
-
-app.mount('#app');
+createApp(ParticleField).mount('#app')

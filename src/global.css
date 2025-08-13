@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* WittyWizard Portfolio - Illuminati Mysterious Theme
+Dark theme with neon lighting effects and dramatic animations
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 20% 2%;
+    --foreground: 50 100% 85%;
+
+    --card: 220 20% 4%;
+    --card-foreground: 50 100% 85%;
+
+    --popover: 220 20% 4%;
+    --popover-foreground: 50 100% 85%;
+
+    --primary: 50 100% 60%;
+    --primary-foreground: 220 20% 2%;
+
+    --secondary: 200 100% 60%;
+    --secondary-foreground: 220 20% 2%;
+
+    --muted: 220 20% 8%;
+    --muted-foreground: 200 30% 70%;
+
+    --accent: 50 100% 70%;
+    --accent-foreground: 220 20% 2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 50% 20%;
+    --input: 220 20% 8%;
+    --ring: 50 100% 60%;
+
+    /* Mystical Yellow & Blue Neon theme */
+    --neon-yellow: 50 100% 60%;
+    --neon-gold: 45 100% 50%;
+    --neon-blue: 200 100% 60%;
+    --neon-cyan: 180 100% 60%;
+    --neon-electric-blue: 220 100% 70%;
+
+    /* Mystery theme */
+    --mystery-dark: 220 20% 2%;
+    --mystery-darker: 220 25% 1%;
+    --glow-intensity: 0 0 25px;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    /* @apply border border-[hsl(var(--border))]; */
+  }
+
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] overflow-x-hidden;
+  }
+}
+
+@layer components {
+
+  /* Neon glow effects */
+  .neon-glow {
+    filter: drop-shadow(0 0 10px hsl(var(--neon-yellow))) drop-shadow(0 0 20px hsl(var(--neon-yellow))) drop-shadow(0 0 40px hsl(var(--neon-yellow)));
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px hsl(var(--neon-yellow)),
+      0 0 20px hsl(var(--neon-yellow)),
+      0 0 40px hsl(var(--neon-yellow));
+  }
+
+  .mystery-gradient {
+    background: radial-gradient(circle at center,
+        hsl(var(--mystery-dark)) 0%,
+        hsl(var(--mystery-darker)) 100%);
+  }
+
+  /* Illuminati eye animation */
+  .eye-appear {
+    animation: eyeAppear 3s ease-in-out forwards;
+  }
+
+  .eye-open {
+    animation: eyeOpen 2s ease-in-out forwards;
+  }
+
+  .eye-glow {
+    filter: drop-shadow(0 0 20px hsl(var(--neon-yellow))) drop-shadow(0 0 40px hsl(var(--neon-yellow))) drop-shadow(0 0 60px hsl(var(--neon-yellow)));
+  }
+
+  /* Floating particles */
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: hsl(var(--neon-yellow));
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+  }
+
+  .particle:nth-child(odd) {
+    animation-delay: -2s;
+    background: hsl(var(--neon-blue));
+  }
+
+  .particle:nth-child(3n) {
+    animation-delay: -4s;
+    background: hsl(var(--neon-electric-blue));
+  }
+}
+
+@layer utilities {
+
+  /* Custom keyframes */
+  @keyframes eyeAppear {
+    0% {
+      opacity: 0;
+      transform: scale(0) rotate(0deg);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: scale(0.5) rotate(180deg);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(360deg);
+    }
+  }
+
+  @keyframes eyeOpen {
+    0% {
+      clip-path: circle(0% at 50% 50%);
+    }
+
+    100% {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.3;
+    }
+
+    25% {
+      transform: translateY(-20px) translateX(10px);
+      opacity: 0.7;
+    }
+
+    50% {
+      transform: translateY(-40px) translateX(-5px);
+      opacity: 1;
+    }
+
+    75% {
+      transform: translateY(-20px) translateX(-10px);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      filter: drop-shadow(0 0 10px hsl(var(--neon-yellow)));
+    }
+
+    50% {
+      filter: drop-shadow(0 0 30px hsl(var(--neon-yellow))) drop-shadow(0 0 50px hsl(var(--neon-yellow)));
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite ease-in-out;
+  }
+
+  /* Scroll reveal animations */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .slide-in-left {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 0.8s ease-out;
+  }
+
+  .slide-in-left.revealed {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .slide-in-right {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 0.8s ease-out;
+  }
+
+  .slide-in-right.revealed {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .fade-in-up {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+  }
+
+  .fade-in-up.revealed {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
