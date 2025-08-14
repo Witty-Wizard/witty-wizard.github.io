@@ -53,18 +53,13 @@ onMounted(() => {
 
 <template>
   <div class="fixed inset-0 pointer-events-none">
-    <div
-      v-for="particle in particles"
-      :key="particle.id"
-      class="absolute rounded-full opacity-60"
-      :style="{
-        left: `${particle.x}px`,
-        top: `${particle.y}px`,
-        width: `${particle.size}px`,
-        height: `${particle.size}px`,
-        backgroundColor: `hsl(var(${particle.color}))`,
-        boxShadow: `0 0 ${particle.size * 2}px hsl(var(${particle.color}))`,
-      }"
-    ></div>
+    <div v-for="particle in particles" :key="particle.id" class="absolute rounded-full opacity-60" :style="{
+      left: `${particle.x}px`,
+      top: `${particle.y}px`,
+      width: `${particle.size}px`,
+      height: `${particle.size}px`,
+      backgroundColor: `hsl(var(${particle.color}))`,
+      boxShadow: `0 0 ${particle.size * 2}px hsl(var(${particle.color}))`,
+    }"></div>
   </div>
 </template>
